@@ -1,0 +1,86 @@
+@import "Component/navbar";
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-family: sans-serif;
+    
+}
+#create_product_container{
+    padding-top: 150px;
+    padding-left: 250px;
+
+}
+#seller_view button{
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: $mainColor;
+    border: none;
+}
+table,td,th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+    img{
+        width: 30px;
+    }
+}
+table{
+    border-collapse: collapse;
+    width: 70%;
+}
+dialog{
+    position: fixed;
+    top: 10vh;
+    left: 20%;
+    width: 60%;
+    z-index: 10;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    header {
+    
+       font-size: 1.25rem;
+       width: 100%;
+       background-color: $mainColor;
+       padding: 10px;
+       
+     }
+    section {
+        padding: 10px;
+    }
+    menu {
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            margin-right: 10px;
+            background-color: $mainColor;
+            border: none;
+        }
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    input {
+        display: block;
+        width: 97%;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+        
+    }
+}
+ 
+  

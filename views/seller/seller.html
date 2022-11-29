@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seller page</title>
+    <link rel="stylesheet" href="../../css/seller.min.css">
+
+</head>
+<body>
+    <nav>
+        <div class="nav_logo">
+            <img src="../../img/homepage.png" alt="" width="150px">
+            <p>Easy Online</p>
+        </div>
+        <div class="nav-search">
+            <input type="text" placeholder="Search here">
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../buyer/buyer.html">Buyer</a></li>
+                <li><a href="seller.html">Seller</a></li>
+            </ul>
+        </div>
+        <div class="nav_btn">
+            <button>SIGN IN</button>
+            <button>SIGN UP</button>
+        </div>
+    </nav>
+    <div id="create_product_container">
+        <div id="create_product_dialog" style="display: none">
+            <dialog open>
+                <header>Create new product</header>
+        
+                <section>
+                  <label>ID</label>
+                  <input id="id" type="number" placeholder="Id of product" />
+        
+                  <label>Name</label>
+                  <input id="name" type="text" placeholder="Name of product" />
+        
+                  <label>Color</label>
+                  <input id="color" type="text" placeholder="Color of product" />
+        
+                  <label>Price</label>
+                  <input id="price" type="number" placeholder="Price of product" />
+        
+    
+                </section>
+        
+                <menu>
+                  <button onclick="onCancel()" >Cancel</button>
+                  <button onclick="onCreate()" >Create</button>
+                </menu>
+              </dialog>
+        </div>
+        <div id="seller_view">
+            <div id="create_product">
+                <button onclick="onAddProduct()">Add Product</button>
+            </div>
+            <div id="group_product_container">
+                <table id="table">
+                    <tr>
+                        <th >ID</th>
+                        <th>Name</th>
+                        <th>Color</th>
+                        <th>Price</th>
+                        <th colspan="2">Action</th>
+                    </tr>    
+                    <tr class="table-row">
+                        <td id="id">01</td>
+                        <td id="name">T-shirt</td>
+                        <td id="color">Red</td>
+                        <td id="price">12$</td>
+                        <td><img src="../../img/edit.png" alt=""></td>
+                        <td><img src="../../img/trash.png" alt=""></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script src="seller.js"></script>
+</html>
