@@ -1,16 +1,11 @@
-body{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    font-family: sans-serif;
-}
-/* --------------------home page-------------------- */
+@import "../global/varible";
+/* --------------------menu bar-------------------- */
 nav{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #EA8CB1;
+    background-color: $mainColor;
     position: fixed;
     top: 0;
 }
@@ -32,6 +27,9 @@ ul li {
     padding: 10px;
     border-radius: 10px;
     border: none;
+}
+.nav_btn button :hover{
+    background-color: $subColor;
 }
 a{
     text-decoration: none;
