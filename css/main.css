@@ -47,6 +47,10 @@ a {
   outline: none;
 }
 
+.active {
+  border-bottom: 3px solid #D9D9D9;
+}
+
 body {
   margin: 0;
   padding: 0;

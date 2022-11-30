@@ -42,3 +42,6 @@ a{
     border-radius: 10px;
     outline: none;
 }
+.active{
+    border-bottom: 3px solid $subColor;
+}
