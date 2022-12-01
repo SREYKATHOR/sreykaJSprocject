@@ -4,21 +4,75 @@ const dom_create_product_dialog = document.querySelector("#create_product_dialog
 // Data--------------------------------------------
 let products = [
   {
-    id:"1",
+    
     product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
     name:"T-Shirt",
     price:"12"
   },
   {
-    id:"2",
+    
+    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    
+    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    
+    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    
+    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    
+    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    
+    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    
+    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    
+    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    
+    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    
     product_link:"https://static.zara.net/photos///2022/I/0/2/p/1887/311/407/2/w/1920/1887311407_6_1_1.jpg?ts=1662048028255",
     name:"T-Shirt",
     price:"20"
   },
   {
-    id:"3",
+    
     product_link:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmO2SmIKXf-tuxStMfXPqhRHHLZizprboKTFKyl7fzR7wETWnZ-7m7FuihhLt-Dz9VOZw&usqp=CAU",
-    name:"T-Shirt",
+    name:"Skirt",
     price:"10"
   }
 ]
@@ -41,14 +95,14 @@ function onCreate(){
   // 1create new product
   let new_product = {};
   
-  new_product.id = document.querySelector("#id").value;
+  
   new_product.product_link = document.querySelector("#product_link").value;
   new_product.name = document.querySelector("#name").value;
   new_product.price = document.querySelector("#price").value;
 
   products.push(new_product);
 
-  document.querySelector("#id").value ="";
+
   document.querySelector("#product_link").value ="";
   document.querySelector("#name").value ="";
   document.querySelector("#price").value ="";
@@ -74,7 +128,6 @@ function onEditProduct(event){
   document.querySelector("menu").lastElementChild.textContent = "Edit";
   let index = event.target.parentElement.parentElement.dataset.index;
   // Update the dialog with product informatin
-  document.querySelector("#id").value = products[index].id;
   document.querySelector("#product_link").value = products[index].product_link;
   document.querySelector("#name").value = products[index].name;
   document.querySelector("#price").value = products[index].price;
@@ -126,8 +179,8 @@ function displayProduct(){
   table.appendChild(thead);
 
   
-  for (let i = 0; i<6; i++){
-    let thead_text = ["ID","Product_link","Name","Price","Edit","Delete"]
+  for (let i = 0; i<5; i++){
+    let thead_text = ["Product_link","Name","Price","Edit","Delete"]
     let th = document.createElement("th");
     th.textContent = thead_text[i];
     thead.appendChild(th);
@@ -145,11 +198,10 @@ function displayProduct(){
     for (let i in products[index]){
       let td = document.createElement("td")
       td.id = i;
-      if (td.id == "id"){
-          td.textContent = "#" + products[index].id;   
-      } 
+  
       if (td.id == "product_link"){
         product_img = document.createElement('img');
+        product_img.className = "img"
         product_img.src = products[index].product_link;
         td.appendChild(product_img);
         
@@ -184,6 +236,7 @@ function displayProduct(){
 
   
 }
+
 // -------------call product-------------------
 // saveProducts();
 loadProducts();

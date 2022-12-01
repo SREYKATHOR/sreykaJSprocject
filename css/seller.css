@@ -79,6 +79,9 @@ table, td, th {
 table img, td img, th img {
   width: 30px;
 }
+table .img_product, td .img_product, th .img_product {
+  width: 50px;
+}
 
 table {
   border-collapse: collapse;

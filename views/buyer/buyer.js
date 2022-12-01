@@ -3,6 +3,21 @@ let dom_display_product_container = document.querySelector("#display_product_con
 // get information from local storage--------
 const list_product = JSON.parse(localStorage.getItem("products"));
 
+
+
+// FUNCTION------------------------------
+// function saveProducts(){
+//   localStorage.setItem("products",JSON.stringify(list_product));
+// }
+
+// function loadProducts() {
+//   productStorage = JSON.parse(localStorage.getItem("products"));
+//   if (productStorage !== null) {
+//       list_product = productStorage
+//     }
+//     console.log(productStorage);
+// }
+
 // diplay product------------------
 function displayProduct(){
     let product_container = document.querySelector(".list_product_container");
@@ -42,19 +57,36 @@ function displayProduct(){
         product_container.appendChild(product);
     }
     dom_display_product_container.appendChild(product_container);
-    console.log(product_container)
+    // console.log(product_container)
 
 
 }
 
 
+function search(){
+    let search_box = document.getElementById("search_item").value.toUpperCase();
+    let storeItem = document.getElementById("list_product_container");
+    let product = document.querySelectorAll(".product");
+    let productName = document.getElementsByTagName("h2")
+    
+    // console.log(search_box);
 
+    for (let i = 0; i< productName.length; i++){
+        let match = product[i].getElementsByTagName('h2')[0];    
+        if (match){
+            let textValue = match.textContent || match.innerHTML
+            if (textValue.toUpperCase().indexOf(search_box)> -1){
+                product[i].style.display = "";
+            } else{
+                product[i].style.display = "none";
 
-
-
-
+            }
+        }
+    }
+}
 
 
 
 // call function to display product
 displayProduct();
+// loadProducts();

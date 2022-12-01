@@ -15,7 +15,7 @@
             <p>Easy Online</p>
         </div>
         <div class="nav-search">
-            <input type="text" placeholder="Search here">
+            <input type="text" id="search_item" placeholder="Search here" onkeyup="search()">
         </div>
         <div class="nav-menu">
             <ul>
@@ -31,7 +31,7 @@
     </nav>
     <div id="display_product_container">
 
-        <div class="list_product_container">
+        <div class="list_product_container" id="list_product_container">
             <!-- <div class="product">
                 <img src="../../img/buyer.png" alt="">
                 <div class="product_detail">
