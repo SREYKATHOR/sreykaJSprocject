@@ -6,19 +6,19 @@ let products = [
   {
     id:"1",
     product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Red",
+    name:"T-Shirt",
     price:"12"
   },
   {
     id:"2",
     product_link:"https://static.zara.net/photos///2022/I/0/2/p/1887/311/407/2/w/1920/1887311407_6_1_1.jpg?ts=1662048028255",
-    name:"blue",
+    name:"T-Shirt",
     price:"20"
   },
   {
     id:"3",
     product_link:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmO2SmIKXf-tuxStMfXPqhRHHLZizprboKTFKyl7fzR7wETWnZ-7m7FuihhLt-Dz9VOZw&usqp=CAU",
-    name:"yellow",
+    name:"T-Shirt",
     price:"10"
   }
 ]
@@ -62,8 +62,6 @@ function onCreate(){
 function onRemoveProduct(event){
   // Get index
   let index = event.target.parentElement.parentElement.dataset.index;
-  console.log("remove ",index)
-  
   // Romve Product
   products.splice(index,1)
   // Save to local storage
@@ -75,7 +73,6 @@ function onEditProduct(event){
   // Get the product index using the dataset
   document.querySelector("menu").lastElementChild.textContent = "Edit";
   let index = event.target.parentElement.parentElement.dataset.index;
-  console.log("edit ",index)
   // Update the dialog with product informatin
   document.querySelector("#id").value = products[index].id;
   document.querySelector("#product_link").value = products[index].product_link;
@@ -149,7 +146,7 @@ function displayProduct(){
       let td = document.createElement("td")
       td.id = i;
       if (td.id == "id"){
-          td.textContent = products[index].id;   
+          td.textContent = "#" + products[index].id;   
       } 
       if (td.id == "product_link"){
         product_img = document.createElement('img');
@@ -188,6 +185,6 @@ function displayProduct(){
   
 }
 // -------------call product-------------------
-saveProducts();
+// saveProducts();
 loadProducts();
 displayProduct();

@@ -133,6 +133,12 @@ dialog input {
   padding: 10px;
   border-radius: 10px;
 }
+dialog select {
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
 
 #create_product_dialog {
   position: fixed;
