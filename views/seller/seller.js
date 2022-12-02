@@ -4,77 +4,86 @@ const dom_create_product_dialog = document.querySelector("#create_product_dialog
 // Data--------------------------------------------
 let products = [
   {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
+    product_link:"../../img/T-shirt1.jfif",
     name:"T-Shirt",
     price:"12"
   },
   {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Dress",
-    price:"12"
-  },
-  {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Dress",
-    price:"12"
-  },
-  {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Dress",
-    price:"12"
-  },
-  {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Dress",
-    price:"12"
-  },
-  {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Dress",
-    price:"12"
-  },
-  {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Dress",
-    price:"12"
-  },
-  {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Dress",
-    price:"12"
-  },
-  {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Dress",
-    price:"12"
-  },
-  {
-    
-    product_link:"https://media.everlane.com/image/upload/c_fill,dpr_2,f_auto,g_face:center,q_auto,w_auto/v1/i/8b27bc0e_969f.jpg",
-    name:"Dress",
-    price:"12"
-  },
-  {
-    
-    product_link:"https://static.zara.net/photos///2022/I/0/2/p/1887/311/407/2/w/1920/1887311407_6_1_1.jpg?ts=1662048028255",
+    product_link:"../../img/T-shirt2.jfif",
     name:"T-Shirt",
-    price:"20"
+    price:"12"
   },
   {
-    
-    product_link:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmO2SmIKXf-tuxStMfXPqhRHHLZizprboKTFKyl7fzR7wETWnZ-7m7FuihhLt-Dz9VOZw&usqp=CAU",
+    product_link:"../../img/T-shirt3.jfif",
+    name:"T-Shirt",
+    price:"12"
+  },
+  {
+    product_link:"../../img/T-shirt4.jfif",
+    name:"T-Shirt",
+    price:"12"
+  },
+  {
+    product_link:"../../img/dress1.jfif",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    product_link:"../../img/dress2.jfif",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    product_link:"../../img/dress3.jfif",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    product_link:"../../img/dress4.jfif",
+    name:"Dress",
+    price:"12"
+  },
+  {
+    product_link:"../../img/Short1.jfif",
+    name:"Short",
+    price:"12"
+  },
+  {
+    product_link:"../../img/Short2.jfif",
+    name:"Short",
+    price:"12"
+  },
+  {
+    product_link:"../../img/Short3.jfif",
+    name:"Short",
+    price:"12"
+  },
+  {
+    product_link:"../../img/Short4.jfif",
+    name:"Short",
+    price:"12"
+  },
+  {
+    product_link:"../../img/Skirt1.jfif",
     name:"Skirt",
-    price:"10"
-  }
+    price:"12"
+  },
+  {
+    product_link:"../../img/Skirt2.jfif",
+    name:"Skirt",
+    price:"12"
+  },
+  {
+    product_link:"../../img/Skirt3.jfif",
+    name:"Skirt",
+    price:"12"
+  },
+  {
+    product_link:"../../img/Skirt4.jfif",
+    name:"Skirt",
+    price:"12"
+  },
+  
 ]
 // logcal storage--------------------------
 // ------------------function save to local storage--------
@@ -201,7 +210,7 @@ function displayProduct(){
   
       if (td.id == "product_link"){
         product_img = document.createElement('img');
-        product_img.className = "img"
+        product_img.className = "img_product"
         product_img.src = products[index].product_link;
         td.appendChild(product_img);
         

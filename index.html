@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
     <link rel="stylesheet" href="css/main.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -28,7 +29,7 @@
             <button>SIGN UP</button>
         </div>
     </nav>
-    <div class="home_container">
+    <!-- <div class="home_container">
         <div class="group_item">
             <img src="img/buyer.png" alt="">
             <button onclick="buynow"><a href="views/buyer/buyer.html">BUY HERE</a></button>
@@ -37,6 +38,65 @@
             <img src="img/seller.png" alt="">
             <button onclick="sellnow"><a href="views/seller/seller.html">SELL HERE</a> </button>
         </div>
+    </div> -->
+    <!-- ----------------------------------------buy-------------------->
+    <div id="display_product_container">
+
+        <div class="list_product_container" id="list_product_container">
+            <!-- <div class="product">
+                <img src="../../img/buyer.png" alt="">
+                <div class="product_detail">
+                    <h2>Name: T-Shirt</h2>
+                    <h3>Price: 3$</h3>
+                    <button>BUY</button>
+                </div>
+            </div> -->
+            
+    
+        </div>
     </div>
+    <div id="detail_product_dialog" style="display: none">
+        <dialog open id="dialog_detail">
+            <header>Detail Product</header>
+            <section id="section">
+                <!-- <div class="img_product">
+                    <img src="img/buyer.png" alt="">
+                    <div class="group_star">
+                      <i class="material-icons">grade</i>
+                      <i class="material-icons">grade</i>
+                      <i class="material-icons">grade</i>
+                      <i class="material-icons">grade</i>
+                      <i class="material-icons">grade</i>
+                    </div>
+                </div>
+                <div class="detail_product">
+                    <h3>Name: T-Shirt</h3>
+                    <h2>Price: $40</h2> 
+                    <div class= "product_information">
+                      <label for="">Choose Size</label>                
+                      <select name="" id="size_select">
+                          <option disabled >Choose Size</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                          <option value="XXL">XXL</option>
+                      </select>
+                      <label for="">Number of product</label>
+                      <input type="number" placeholder="number">
+                      <div class="product_details">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde repellendus accusamus reprehenderit porro ducimus nihil cupiditate facilis est ad pariatur?</p>
+                      </div>
+                    </div>   
+                </div> -->
+            </section>
+            <!-- <menu>
+              <button onclick="onCancel()" >CANCEL</button>
+              <button onclick="onAddToCard()" >ADD TO CARD</button>
+            </menu>  -->
+          </dialog>
+    </div>
+    <!-- ---------------------------------------------->
+    <script src="views/home/index.js"></script>
 </body>
 </html>
