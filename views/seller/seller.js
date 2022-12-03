@@ -125,8 +125,12 @@ function onCreate(){
 function onRemoveProduct(event){
   // Get index
   let index = event.target.parentElement.parentElement.dataset.index;
-  // Romve Product
-  products.splice(index,1)
+  //  ask permission to remove product
+  let remove_message = "Do you want to delete this product?";
+  if (confirm(remove_message)=== true){
+    products.splice(index,1)         
+    
+  }
   // Save to local storage
   saveProducts();
   // Update view
@@ -247,6 +251,6 @@ function displayProduct(){
 }
 
 // -------------call product-------------------
-// saveProducts();
+saveProducts();
 loadProducts();
 displayProduct();

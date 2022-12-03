@@ -55,36 +55,66 @@ body {
   padding: 0;
   height: 100vh;
   background-color: #D9D9D9;
+  font-family: sans-serif;
 }
 
-.list_product_container {
-  padding: 130px 10px 10px 20px;
+.buyer_container {
+  padding-top: 150px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
-.list_product_container .product {
-  padding: 10px;
-  margin: 10px;
-  width: 250px;
-  background-color: #EA8CB1;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
+.buyer_container #shop_container_section {
   display: flex;
-  align-items: center;
   flex-direction: column;
-}
-.list_product_container .product img {
-  width: 250px;
-  height: 45vh;
-}
-.list_product_container .product .product_detail {
-  align-items: flex-start;
-}
-.list_product_container .product .product_detail button {
-  padding: 10px;
-  border-radius: 10px;
-  width: 150px;
+  width: 600px;
   background-color: #D9D9D9;
-  border-color: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.buyer_container #shop_container_section h2 {
+  align-self: center;
+}
+.buyer_container #shop_container_section .cart_total {
+  align-self: end;
+  margin-right: 50px;
+}
+.buyer_container #shop_container_section .cart_total {
+  font-size: 30px;
+}
+.buyer_container .cart_column {
+  margin: 20px;
+  border-bottom: 1px solid black;
+}
+.buyer_container .cart_column img {
+  width: 50px;
+  height: 50px;
+}
+.buyer_container .cart_row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+.buyer_container .cart_row .remove_btn {
+  padding: 10px;
+  background-color: #e01616;
+  border: none;
+  border-radius: 5px;
+}
+.buyer_container .cart_row #quantity_of_product {
+  width: 30px;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.buyer_container .btn_purchase {
+  margin-top: 20px;
+  width: 200px;
+  font-size: 30px;
+  padding: 20px;
+  background-color: rgb(34, 131, 241);
+  border-radius: 10px;
+  color: white;
+  border: none;
+  align-self: center;
 }/*# sourceMappingURL=buyer.css.map */

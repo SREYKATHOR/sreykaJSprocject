@@ -7,34 +7,7 @@ body{
     height: 90vh;
     font-family: sans-serif;
 }
-// .home_container{
-//     // position: fixed;
-//     height: 100vh;
-//     margin-top: 30px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     padding: 10px;
-    
-//     .group_item{
-//     margin: 10px;
-//     display: flex;
-//     flex-direction: column;
-//     img{
 
-//         width: 200px;;
-//         height: auto;
-        
-//     }
-//     button{
-//         padding: 10px;
-//         border-radius: 10px;
-//         border-color: $mainColor;
-//         background-color: $subColor;
-//     }
-// }
-    
-// }
 .list_product_container{
     padding: 130px 10px 10px 20px;
     // height: 100vh;
@@ -56,13 +29,15 @@ body{
             height: 45vh;
         }
         .product_detail{
-            align-items: flex-start;
+            padding: 10px;
             button{
                 padding: 10px;
+                margin: 5px;
                 border-radius: 10px;
                 width: 150px;
                 background-color: $subColor;
                 border-color: none;
+
                 
             }
         }
@@ -103,6 +78,7 @@ dialog{
         
             img{
                 width: 250px;
+                height: 50vh;
                 
             }
             .group_star{

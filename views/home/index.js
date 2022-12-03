@@ -3,6 +3,11 @@ let dom_display_product_container = document.querySelector("#display_product_con
 let dom_display_dialog = document.querySelector("#detail_product_dialog");
 // get information from local storage--------
 const list_product = JSON.parse(localStorage.getItem("products"));
+// console.log(list_product)
+let user_order_product = []
+
+
+
 
 
 
@@ -17,22 +22,47 @@ function onCancel(event){
     hide(dom_display_dialog)
 }
 function onAddToCard(event){
+    // hide dialog
     hide(dom_display_dialog)
+    // get value from index of user click on add to card
+    let indexOnAddCard = event.target.dataset.index;
+    let product_user_add_to_card = list_product[indexOnAddCard];
+    //add product of user click order to local storage----------------
+    if (user_order_product.length == 0){
+        
+        user_order_product.push(product_user_add_to_card);  
+    }else{
+        for ( let order of user_order_product){
+           
+            if(product_user_add_to_card == order ){
+                alert("You already click this prouduct")
+            }
+            
+            
+        }
+        user_order_product.push(product_user_add_to_card);  
+    }
+    // user_order_product.push(product_user_add_to_card);  
+    console.log(user_order_product);
+    // save to local storage------------------------
+    
+    saveProductsOrder()
+
 }
 
 
 
-// function saveProducts(){
-//   localStorage.setItem("products",JSON.stringify(list_product));
-// }
+function saveProductsOrder(){
+  localStorage.setItem("userOrder",JSON.stringify(user_order_product));
+}
 
-// function loadProducts() {
-//   productStorage = JSON.parse(localStorage.getItem("products"));
-//   if (productStorage !== null) {
-//       list_product = productStorage
-//     }
-//     console.log(productStorage);
-// }
+function loadProducts() {
+  storeUserOrder = JSON.parse(localStorage.getItem("userOrder"));
+  if (storeUserOrder !== null) {
+    user_order_product = storeUserOrder
+    }
+    console.log(user_order_product);
+}
 
 // diplay product------------------
 function displayProduct(){
@@ -65,10 +95,11 @@ function displayProduct(){
         product_price.textContent = "Price: "+ list_product[index].price + " $";
         product_detail.appendChild(product_price)
         
+        
         let product_buy_button = document.createElement("button")
         product_buy_button.addEventListener('click',onDetailProduct);
 
-        product_buy_button.textContent = "BUY NOW";
+        product_buy_button.textContent = "Views Detail";
         product_detail.appendChild(product_buy_button);
 
         
@@ -82,24 +113,28 @@ function displayProduct(){
 }
 // ------------------function on add to card---------------------
 function onDetailProduct(event){
-    let indexOnAddCard = event.target.parentElement.parentElement.dataset.index;
-    console.log(indexOnAddCard);
-    let product_user_detail = list_product[indexOnAddCard];
+    // Show dialog detail------------------
+    show(dom_display_dialog)
+    let indexOnDetailProduct = event.target.parentElement.parentElement.dataset.index;
+    // console.log(indexOnDetailProduct);
+    let product_user_detail = list_product[indexOnDetailProduct];
+    // console.log(product_user_detail);
 
     let dom_dialog_detail = document.getElementById("dialog_detail")
     // console.log(product_user_detail);
 
     // console.log("Hello", product_detail);
 
-    let dasdasfasf = document.getElementById("section");
-    console.log(dasdasfasf)
+    let menu_button = document.getElementById("menu_button");
+    document.getElementById("menu_button").remove();
+   
 
 
     document.getElementById("section").remove();
     let section = document.createElement("section");
     section.id = "section"
     dom_dialog_detail.appendChild(section);
-    console.log(section)
+    
 
     let img_product = document.createElement("div");
     img_product.className = "img_product";
@@ -144,10 +179,12 @@ function onDetailProduct(event){
     let size_select = document.createElement("select");
     size_select.id = "size_select";
     product_information.appendChild(size_select);
+    // console.log("Hello",size_select)
 
 
     let disabled_option = document.createElement("option");
     disabled_option.disabled = "disabled"
+    disabled_option.textContent= "Choose Size";
     size_select.appendChild(disabled_option);
 
     let array_of_size = ["S","M","L","XL","XXL"];
@@ -157,42 +194,41 @@ function onDetailProduct(event){
         size_option.textContent = size;
         size_select.appendChild(size_option);
     }
+    
 
-    let num_of_product_label = document.createElement("label");
-    num_of_product_label.textContent = "Number Of Product";
-    product_information.appendChild(num_of_product_label);
+    // let num_of_product_label = document.createElement("label");
+    // num_of_product_label.textContent = "Number Of Product";
+    // product_information.appendChild(num_of_product_label);
 
-    let num_of_product = document.createElement("input");
-    num_of_product.type = "number"
-    num_of_product.placeholder = "Your Product Number"
-    product_information.appendChild(num_of_product);
+    // let num_of_product = document.createElement("input");
+    // num_of_product.type = "number"
+    // num_of_product.placeholder = "Your Product Number"
+    // product_information.appendChild(num_of_product);
 
     let product_detail = document.createElement("div");
     product_detail.className = "product_details"
-    product_information.appendChild(price_product);
+    product_information.appendChild(product_detail);
 
     let p_detail = document.createElement("p");
-    p_detail.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
-    price_product.appendChild(p_detail);
+    p_detail.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    product_detail.appendChild(p_detail);
 
 
     let menu_btn = document.createElement("menu");
+    menu_btn.id = "menu_button"
     dom_dialog_detail.appendChild(menu_btn);
 
     let onCanel_btn = document.createElement("button");
+    onCanel_btn.dataset.index = indexOnDetailProduct;
     onCanel_btn.addEventListener("click",onCancel);
     onCanel_btn.textContent = "CANCEL";
     menu_btn.appendChild(onCanel_btn);
 
     let onAddToCard_btn = document.createElement("button");
+    onAddToCard_btn.dataset.index = indexOnDetailProduct;
     onAddToCard_btn.addEventListener("click",onAddToCard);
     onAddToCard_btn.textContent = "ADD TO CARD";
     menu_btn.appendChild(onAddToCard_btn);    
-    
-    
-    // Show dialog detail------------------
-    show(dom_display_dialog)
-
     
 
     

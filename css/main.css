@@ -80,10 +80,11 @@ body {
   height: 45vh;
 }
 .list_product_container .product .product_detail {
-  align-items: flex-start;
+  padding: 10px;
 }
 .list_product_container .product .product_detail button {
   padding: 10px;
+  margin: 5px;
   border-radius: 10px;
   width: 150px;
   background-color: #D9D9D9;
@@ -122,6 +123,7 @@ dialog section .img_product {
 }
 dialog section .img_product img {
   width: 250px;
+  height: 50vh;
 }
 dialog section .img_product .group_star {
   margin: 15px;

@@ -20,8 +20,8 @@
         <div class="nav-menu">
             <ul>
                 <li><a href="../../index.html">Home</a></li>
-                <li class="active"><a href="buyer.html">Buyer</a></li>
-                <!-- <li><a href="../seller/seller.html">Seller</a></li> -->
+                <li class="active"><a href="buyer.html">Shop</a></li>
+                <li><a href="../seller/seller.html">Seller</a></li>
             </ul>
         </div>
         <div class="nav_btn">
@@ -29,20 +29,46 @@
             <button>SIGN UP</button>
         </div>
     </nav>
-    <div id="display_product_container">
+    <div class="buyer_container">
 
-        <div class="list_product_container" id="list_product_container">
-            <!-- <div class="product">
-                <img src="../../img/buyer.png" alt="">
-                <div class="product_detail">
-                    <h2>Name: T-Shirt</h2>
-                    <h3>Price: 3$</h3>
-                    <button>BUY</button>
+        <section id="shop_container_section">
+            <h2 class="section_header">CART</h2>
+            <div class="cart_row">
+                <span class="cart_item cart_header cart_column">ITEM</span>
+                <span class="cart_price cart_header cart_column">PRICE</span>
+                <span class="cart_quantity cart_header cart_column">QUANTITY</span>
+            </div>
+            <div class="cart_item" id="cart_item">
+                <!-- <div class="cart_row">
+                    <div class="cart_item cart_column" id="cart_item">
+                        <img class="cart_item_image" src="../../img/T-shirt1.jfif" alt="" >
+                        <span class="cart_item_title">T-Shirt</span>
+                    </div>
+                    <span class="cart_price cart_column" >$ 9.99</span>
+                    <div class="cart_quantity_input cart_column">
+                        <input type="number" id="quantity_of_product" value="1">
+                        <button class="remove_btn" type="button">REMOVE</button>
+                    </div>
                 </div>
-            </div> -->
-            
+                <div class="cart_row">
+                    <div class="cart_item cart_column" id="cart_item">
+                        <img class="cart_item_image" src="../../img/T-shirt1.jfif" alt="" >
+                        <span class="cart_item_title">T-Shirt</span>
+                    </div>
+                    <span class="cart_price cart_column" >$ 9.99</span>
+                    <div class="cart_quantity_input cart_column">
+                        <input type="number" id="quantity_of_product" value="1">
+                        <button class="remove_btn" type="button">REMOVE</button>
+                    </div>
+                </div> -->
+            </div>
+            <div class="cart_total">
+                <strong class="cart_total_title">Total</strong>
+                <span class="cart_total_price">$ 99.99</span>
+            </div>
+            <button class="btn_purchase" type="button">PURCHASE</button>
     
-        </div>
+        </section>
     </div>
 </body>
 <script src="buyer.js"></script>
