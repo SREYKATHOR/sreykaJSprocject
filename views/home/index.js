@@ -6,7 +6,16 @@ const list_product = JSON.parse(localStorage.getItem("products"));
 // console.log(list_product)
 let user_order_product = []
 
+function saveOrders(){
+    localStorage.setItem("userOrder",JSON.stringify(user_order_product))
+}
+function loadOrders(){
+    let userOrderStore = JSON.parse(localStorage.getItem("userOrder"));
+    if (userOrderStore !== null) {
+        user_order_product = userOrderStore;
+      }
 
+}
 
 
 
@@ -28,25 +37,14 @@ function onAddToCard(event){
     let indexOnAddCard = event.target.dataset.index;
     let product_user_add_to_card = list_product[indexOnAddCard];
     //add product of user click order to local storage----------------
-    if (user_order_product.length == 0){
-        
-        user_order_product.push(product_user_add_to_card);  
-    }else{
-        for ( let order of user_order_product){
-           
-            if(product_user_add_to_card == order ){
-                alert("You already click this prouduct")
-            }
-            
-            
-        }
-        user_order_product.push(product_user_add_to_card);  
-    }
+    user_order_product.push(product_user_add_to_card);  
+    
     // user_order_product.push(product_user_add_to_card);  
     console.log(user_order_product);
     // save to local storage------------------------
     
-    saveProductsOrder()
+    saveOrders();
+    loadOrders();
 
 }
 
@@ -196,14 +194,6 @@ function onDetailProduct(event){
     }
     
 
-    // let num_of_product_label = document.createElement("label");
-    // num_of_product_label.textContent = "Number Of Product";
-    // product_information.appendChild(num_of_product_label);
-
-    // let num_of_product = document.createElement("input");
-    // num_of_product.type = "number"
-    // num_of_product.placeholder = "Your Product Number"
-    // product_information.appendChild(num_of_product);
 
     let product_detail = document.createElement("div");
     product_detail.className = "product_details"
@@ -263,4 +253,4 @@ function search(){
 
 // call function to display product
 displayProduct();
-// loadProducts();
+loadOrders();

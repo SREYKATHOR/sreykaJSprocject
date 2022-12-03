@@ -101,7 +101,7 @@ body {
   border: none;
   border-radius: 5px;
 }
-.buyer_container .cart_row #quantity_of_product {
+.buyer_container .cart_row .quantity_of_product {
   width: 30px;
   padding: 8px;
   margin: 5px;

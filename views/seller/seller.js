@@ -103,18 +103,27 @@ function onCreate(){
   hide(dom_create_product_dialog);
   // 1create new product
   let new_product = {};
+
+  let valueProductLink = document.querySelector("#product_link").value;
+  let valueName = document.querySelector("#name").value;
+  let valuePrice = document.querySelector("#price").value;
   
   
-  new_product.product_link = document.querySelector("#product_link").value;
-  new_product.name = document.querySelector("#name").value;
-  new_product.price = document.querySelector("#price").value;
+  new_product.product_link = valueProductLink;
+  new_product.name = valueName;
+  new_product.price = valuePrice;
+
+  
 
   products.push(new_product);
 
+  // clear value from create input
 
-  document.querySelector("#product_link").value ="";
-  document.querySelector("#name").value ="";
-  document.querySelector("#price").value ="";
+  valueProductLink = ""
+  valueName = ""
+  valuePrice = ""
+  
+
   // 2 save new product
   saveProducts();
   // 3 display new product
@@ -254,3 +263,4 @@ function displayProduct(){
 saveProducts();
 loadProducts();
 displayProduct();
+

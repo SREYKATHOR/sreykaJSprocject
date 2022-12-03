@@ -34,9 +34,9 @@
         <section id="shop_container_section">
             <h2 class="section_header">CART</h2>
             <div class="cart_row">
-                <span class="cart_item cart_header cart_column">ITEM</span>
-                <span class="cart_price cart_header cart_column">PRICE</span>
-                <span class="cart_quantity cart_header cart_column">QUANTITY</span>
+                <span class=" cart_header cart_column">ITEM</span>
+                <span class=" cart_header cart_column">PRICE</span>
+                <span class=" cart_header cart_column">QUANTITY</span>
             </div>
             <div class="cart_item" id="cart_item">
                 <!-- <div class="cart_row">
@@ -46,7 +46,7 @@
                     </div>
                     <span class="cart_price cart_column" >$ 9.99</span>
                     <div class="cart_quantity_input cart_column">
-                        <input type="number" id="quantity_of_product" value="1">
+                        <input type="number" class ="quantity_of_product"  value="1">
                         <button class="remove_btn" type="button">REMOVE</button>
                     </div>
                 </div>
@@ -57,16 +57,16 @@
                     </div>
                     <span class="cart_price cart_column" >$ 9.99</span>
                     <div class="cart_quantity_input cart_column">
-                        <input type="number" id="quantity_of_product" value="1">
+                        <input type="number" id="quantity_of_product" value="1" class = "quantity_of_product">
                         <button class="remove_btn" type="button">REMOVE</button>
                     </div>
                 </div> -->
             </div>
             <div class="cart_total">
                 <strong class="cart_total_title">Total</strong>
-                <span class="cart_total_price">$ 99.99</span>
+                <span class="cart_total_price">$ 0</span>
             </div>
-            <button class="btn_purchase" type="button">PURCHASE</button>
+            <button class="btn_purchase" id="payment" type="button" onclick="paymentClicked()">PAYMENT</button>
     
         </section>
     </div>
