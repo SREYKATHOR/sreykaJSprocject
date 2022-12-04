@@ -11,9 +11,9 @@ function saveOrders(){
 }
 function loadOrders(){
     user_order_product = JSON.parse(localStorage.getItem("userOrder"));
-    // if (userOrderStore !== null) {
-    //     user_order_product = userOrderStore;
-    //   }
+    if (userOrderStore !== null) {
+        user_order_product = userOrderStore;
+      }
 
 }
 
