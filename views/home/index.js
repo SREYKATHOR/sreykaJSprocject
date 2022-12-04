@@ -10,12 +10,20 @@ function saveOrders(){
     localStorage.setItem("userOrder",JSON.stringify(user_order_product))
 }
 function loadOrders(){
-    let userOrderStore = JSON.parse(localStorage.getItem("userOrder"));
-    if (userOrderStore !== null) {
-        user_order_product = userOrderStore;
-      }
+    user_order_product = JSON.parse(localStorage.getItem("userOrder"));
+    // if (userOrderStore !== null) {
+    //     user_order_product = userOrderStore;
+    //   }
 
 }
+
+if (user_order_product.length==0){
+    document.getElementById("nodata").style.display = "block"
+}
+else{
+    document.getElementById("nodata").style.display = "none"
+}
+
 
 
 
