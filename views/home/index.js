@@ -260,5 +260,6 @@ function search(){
 
 
 // call function to display product
+saveOrders();
 displayProduct();
 loadOrders();
