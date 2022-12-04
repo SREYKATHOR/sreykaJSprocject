@@ -234,16 +234,16 @@ function search(){
     let productName = document.getElementsByTagName("h2")
     
     // console.log(search_box);
-
+    
     for (let i = 0; i< productName.length; i++){
-        let match = product[i].getElementsByTagName('h2')[0];    
+        let match = product[i].getElementsByTagName("h2")[0];    
+        
         if (match){
             let textValue = match.textContent || match.innerHTML
             if (textValue.toUpperCase().indexOf(search_box)> -1){
-                product[i].style.display = "";
+                show(product[i])
             } else{
-                product[i].style.display = "none";
-
+                hide(product[i])
             }
         }
     }

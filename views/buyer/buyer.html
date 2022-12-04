@@ -11,8 +11,8 @@
 <body>
     <nav>
         <div class="nav_logo">
-            <img src="../../img/homepage.png" alt="" width="150px">
-            <p>Easy Online</p>
+            <img src="../../img/indexpage.png" alt="" width="150px">
+            <p>Easy Shop</p>
         </div>
         <div class="nav-search">
             <input type="text" id="search_item" placeholder="Search here" onkeyup="search()">
@@ -29,46 +29,71 @@
             <button>SIGN UP</button>
         </div>
     </nav>
-    <div class="buyer_container">
-
-        <section id="shop_container_section">
-            <h2 class="section_header">CART</h2>
-            <div class="cart_row">
-                <span class=" cart_header cart_column">ITEM</span>
-                <span class=" cart_header cart_column">PRICE</span>
-                <span class=" cart_header cart_column">QUANTITY</span>
-            </div>
-            <div class="cart_item" id="cart_item">
-                <!-- <div class="cart_row">
-                    <div class="cart_item cart_column" id="cart_item">
-                        <img class="cart_item_image" src="../../img/T-shirt1.jfif" alt="" >
-                        <span class="cart_item_title">T-Shirt</span>
-                    </div>
-                    <span class="cart_price cart_column" >$ 9.99</span>
-                    <div class="cart_quantity_input cart_column">
-                        <input type="number" class ="quantity_of_product"  value="1">
-                        <button class="remove_btn" type="button">REMOVE</button>
-                    </div>
-                </div>
-                <div class="cart_row">
-                    <div class="cart_item cart_column" id="cart_item">
-                        <img class="cart_item_image" src="../../img/T-shirt1.jfif" alt="" >
-                        <span class="cart_item_title">T-Shirt</span>
-                    </div>
-                    <span class="cart_price cart_column" >$ 9.99</span>
-                    <div class="cart_quantity_input cart_column">
-                        <input type="number" id="quantity_of_product" value="1" class = "quantity_of_product">
-                        <button class="remove_btn" type="button">REMOVE</button>
-                    </div>
-                </div> -->
-            </div>
-            <div class="cart_total">
-                <strong class="cart_total_title">Total</strong>
-                <span class="cart_total_price">$ 0</span>
-            </div>
-            <button class="btn_purchase" id="payment" type="button" onclick="paymentClicked()">PAYMENT</button>
+    <!-- ----------------------------------------------- -->
     
-        </section>
+    <div id="get_user_information_contianer" style="display: none" >
+        <div id="get_user_information" >
+            <dialog open>
+                <header>Customer Information</header>
+        
+                <section>
+                  <label>Customer Name</label>
+                  <input id="nameCustomer" type="text" placeholder="Type your name" />
+        
+                  <label>Customer Phone Number</label>
+                  <input id="phone_number" type="number" placeholder="Type your phone number" required />
+        
+    
+                </section>
+        
+                <menu>
+                  <button id="cancel_btn" >Cancel</button>
+                  <button id ="submit_btn" >Submit</button>
+                </menu>
+            </dialog>
+        </div>
+    </div>
+
+              <!-- --------------------------------------------------------------- -->
+    <div class="buyer_container">
+    <section id="shop_container_section">
+        <h2 class="section_header">CART</h2>
+        <div class="cart_row">
+            <span class=" cart_header cart_column">ITEM</span>
+            <span class=" cart_header cart_column">PRICE</span>
+            <span class=" cart_header cart_column">QUANTITY</span>
+        </div>
+        <div class="cart_item" id="cart_item">
+            <!-- <div class="cart_row">
+                <div class="cart_item cart_column" id="cart_item">
+                    <img class="cart_item_image" src="../../img/T-shirt1.jfif" alt="" >
+                    <span class="cart_item_title">T-Shirt</span>
+                </div>
+                <span class="cart_price cart_column" >$ 9.99</span>
+                <div class="cart_quantity_input cart_column">
+                    <input type="number" class ="quantity_of_product"  value="1">
+                    <button class="remove_btn" type="button">REMOVE</button>
+                </div>
+            </div>
+            <div class="cart_row">
+                <div class="cart_item cart_column" id="cart_item">
+                    <img class="cart_item_image" src="../../img/T-shirt1.jfif" alt="" >
+                    <span class="cart_item_title">T-Shirt</span>
+                </div>
+                <span class="cart_price cart_column" >$ 9.99</span>
+                <div class="cart_quantity_input cart_column">
+                    <input type="number" id="quantity_of_product" value="1" class = "quantity_of_product">
+                    <button class="remove_btn" type="button">REMOVE</button>
+                </div>
+            </div> -->
+        </div>
+        <div class="cart_total">
+            <strong class="cart_total_title">Total</strong>
+            <span class="cart_total_price">$ 0</span>
+        </div>
+        <button class="btn_purchase" id="payment" type="button" >PAYMENT</button>
+
+    </section>
     </div>
 </body>
 <script src="buyer.js"></script>

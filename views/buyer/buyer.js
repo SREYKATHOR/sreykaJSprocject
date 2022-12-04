@@ -56,6 +56,8 @@ for (let index in userOrder){
    quantity_of_product_input.className = "quantity_of_product";
    quantity_of_product_input.type = "number";
    quantity_of_product_input.value = 1;
+   quantity_of_product_input.addEventListener("keyup",excuteTotailPrice)
+   quantity_of_product_input.dataset.index = index;
    cart_quantity_input.appendChild(quantity_of_product_input);
 
    let remove_btn = document.createElement("button");
@@ -77,7 +79,9 @@ for (var i= 0; i< remove_btn.length; i++){
 function removeOrder(event){
     var buttonClickedIndex = event.target.parentElement.parentElement.remove();
     userOrder.splice(buttonClickedIndex,1)         
-    excuteTotailPrice();
+    firstExcutePrice("remove");
+   
+
 
 
     saveOrders();
@@ -86,21 +90,50 @@ function removeOrder(event){
     
 }
 // -----------excute the totail product--------------------
-function excuteTotailPrice(){
+var total = 0
+
+function firstExcutePrice(count){
     let cardItemContainer = document.getElementById("cart_item");
-    console.log(cardItemContainer);
-    var total = 0
+
     for(let order of userOrder){
+        subTotal = 0
         let priceElement = document.getElementsByClassName("cart_price")[0]
         let quantityElement = document.getElementsByClassName("quantity_of_product")[0]
-        // console.log(priceElement);
         
         let price = parseFloat(priceElement.textContent.replace("$",""))
-        // console.log(price)
-        let quantity = quantityElement.value
-        total = total + (price * quantity)
+        
+        let quantity = quantityElement.value 
+        
+    
+        subTotal = subTotal + (price * quantity)
+        if (count == "add"){
+            total = total + subTotal
+        }else if (count = "remmove"){
+            total = total - subTotal
+        }
+
     }
-    // console.log(total)
+    document.getElementsByClassName("cart_total_price")[0].textContent = "$ " + total
+}
+function excuteTotailPrice(event){
+    let cardItemContainer = document.getElementById("cart_item");
+    let quantity_index = event.target.dataset.index;
+    
+    for(let order of userOrder){
+        subTotal = 0
+        let priceElement = document.getElementsByClassName("cart_price")[0]
+        let quantityElement = document.getElementsByClassName("quantity_of_product")[quantity_index]
+        
+        
+        let price = parseFloat(priceElement.textContent.replace("$",""))
+        
+        let quantity = quantityElement.value 
+       
+        subTotal = subTotal + (price * quantity)
+        total = total + subTotal
+      
+    }
+    
     document.getElementsByClassName("cart_total_price")[0].textContent = "$ " + total
     
 
@@ -109,11 +142,15 @@ function excuteTotailPrice(){
     // pay---------------------------
 function paymentClicked(){
     alert("Thank you for buying")
+    
 
-    let orderHistory = JSON.parse(localStorage.getItem("userOrder"));
-    localStorage.setItem("orderHistory",JSON.stringify(orderHistory))
+    let ManageOrderHistory = JSON.parse(localStorage.getItem("userOrder"));
+    ManageOrderHistory.push(custpmer_information);
+    
 
-    if (orderHistory !== null){
+    localStorage.setItem("orderHistory",JSON.stringify(ManageOrderHistory))
+
+    if (ManageOrderHistory !== null){
         userOrder = []
     }
 
@@ -129,9 +166,49 @@ function paymentClicked(){
     excuteTotailPrice();
     saveOrders();
 
-
-    
-
 }
-excuteTotailPrice();
+let formCheckOut = document.getElementById("get_user_information_contianer");
+
+
+
+let payment = document.getElementById("payment")
+payment.addEventListener('click',OnClickCheckOut)
+function OnClickCheckOut(){
+    formCheckOut.style.display = "block"
+    
+}
+let cancel = document.getElementById("cancel_btn")
+cancel.addEventListener("click",onCancel)
+function onCancel(){
+    hide(formCheckOut)
+}
+
+
+let submit = document.getElementById("submit_btn")
+submit.addEventListener("click",onSubmit)
+let custpmer_information = []
+function onSubmit(){
+    let newCustomer = {}
+    let name = document.getElementById("nameCustomer")
+    let phoneNumber = document.getElementById("phone_number")
+    if (name.value == "" || phoneNumber == ""){
+        alert("You didn't complete it yet. Please complete it." )
+    }
+    else{
+        newCustomer.nameCustomer =  name.value
+        newCustomer.phoneNumberCustomer = phoneNumber.value
+        custpmer_information.push(newCustomer)
+        hide(formCheckOut)
+        paymentClicked();
+    }
+}
+
+let dom_dialog = document.getElementById("#get_user_information")
+function show(element){
+    element.style.display = "block"
+}
+function hide(element){
+    element.style.display = "none"
+}
+firstExcutePrice("add");
 loadOrders();
